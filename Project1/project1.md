@@ -60,7 +60,7 @@ This means that approximately 48% of the relationship is explained by the parame
 
 An alternative method for gaining an insight into the goodness of fit of the model would be to plot the residuals. 
 ![Residual Histogram 1](residuals.png)
-At first glance, the residuals seem to have a near normal distribution. This would imply that the linear model offers a reasonable approximation of the data. However, if we instead plot the residuals per data point, we see another story:
+At first glance, the residuals seem to have an approximate normal distribution. This would imply that the linear model offers a reasonable approximation of the data. However, if we instead plot the residuals per data point, we see another story:
 ![Residual Histogram 2](residuals2.png)
 This suggests that the residuals aren't normally distributed, but are instead following a cyclical, non-linear pattern and that a non-linear model would better fit the data. 
 
