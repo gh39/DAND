@@ -1,6 +1,6 @@
 ##Section 1. Statistical Test
 ####1.1 Which statistical test did you use to analyze the NYC subway data? Did you use a one-tail or a two-tail P value? What is the null hypothesis? What is your p-critical value?
-After conducting a Mann-Whitney U test, I concluded that there is sufficient evidence to reject the null hypothesis of both samples coming from the same population at 5% significance (p-critical = 0.05).
+After conducting a two-tailed Mann-Whitney U test, I concluded that there is sufficient evidence to reject the null hypothesis of both samples coming from the same population at 5% significance (p-critical = 0.05). The Mann-Whitney U test gave a p value of 0.0249. As this defaults to a one sided test, doubling it gives us the two tailed p-value, which gives 0.0498 meaning it is barely significant at the 5% level.
 
 ####1.2 Why is this statistical test applicable to the dataset? In particular, consider the assumptions that the test is making about the distribution of ridership in the two samples.
 If we could assume that both samples were normally distributed, a t-test would be preferable. After plotting both samples on a historgram, we can see that neither are normally distributed. As a result, a good choice for a test to examine whether both samples are drawn from the same population would be the Mann-Whitney U test. 
@@ -56,18 +56,25 @@ ENTRIESn_hourly = 1539.12679304 + 2.94645287e+01 * rain + 2.87263803e+01 * preci
 0.47924770782
 
 ####2.6 What does this R2 value mean for the goodness of fit for your regression model? Do you think this linear model to predict ridership is appropriate for this dataset, given this R2  value?
-This means that approximately 48% of the relationship is explained by the parameters included in the model. This suggests that the model has some explanatory power, but that there is a good amount of room for improvement. 
+This means that approximately 48% of the relationship is explained by the parameters included in the model with the rest of the variability in ridership contained within the residuals. This suggests that the model has some explanatory power, but that there is a good amount of room for improvement. 
+
+An alternative method for gaining an insight into the goodness of fit of the model would be to plot the residuals. 
+![Residual Histogram 1](residuals.png)
+At first glance, the residuals seem to have a near normal distribution. This would imply that the linear model offers a reasonable approximation of the data. However, when we increase the number of bins and limit the x-axis to show only the most central data, another picture starts to appear.
+![Residual Histogram 2](residuals2.png)
+This suggests that the residuals aren't normally distributed, but are instead following a cyclical, non-linear pattern and that a non-linear model would better fit the data. 
 
 ##Section 3. Visualization
 Please include two visualizations that show the relationships between two or more variables in the NYC subway data.
 Remember to add appropriate titles and axes labels to your plots. Also, please add a short description below each figure commenting on the key insights depicted in the figure.
 ####3.1 One visualization should contain two histograms: one of  ENTRIESn_hourly for rainy days and one of ENTRIESn_hourly for non-rainy days.
 ![ENTRIESn_hourly Histogram](histogram1.png)
+This depicts the total number of riders in the subway system when it is raining and when it is not. These are aggregate numbers over the whole time period that data was collected, which explains why it appears that ridership was higher when it wasn't raining versus when it was. This is simply due to the higher number of dry days than wet days. The key point to note here is that the data is not normally distributed, meaning that a t-test would not be a suitable statistical test for this data.
 
 
 ####3.2 One visualization can be more freeform. You should feel free to implement something that we discussed in class (e.g., scatter plots, line plots) or attempt to implement something more advanced if you'd like. 
 ![Daily no. of riders on the NYC Subway](viz2.png)
-
+This depicts the total number of riders on the NYC Subway per day, where 0 is Sunday and 6 is Saturday. As expected, there is a peak from Monday (1) to Friday (5) . The comparatively low number of riders on Mondays can be explained by the fact that there was a holiday Monday in the dataset and these are total figures across the month. There is no obvious explanation for the slight dip in ridership on Thursday and this requires further investigation. A possible explanation would be people going out after work on a Thursday evening and taking a taxi home instead of the subway. 
 
 ##Section 4. Conclusion
 Please address the following questions in detail. Your answers should be 1-2 paragraphs long.
