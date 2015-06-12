@@ -60,7 +60,7 @@ This means that approximately 48% of the relationship is explained by the parame
 
 An alternative method for gaining an insight into the goodness of fit of the model would be to plot the residuals. 
 ![Residual Histogram 1](residuals.png)
-At first glance, the residuals seem to have a near normal distribution. This would imply that the linear model offers a reasonable approximation of the data. However, when we increase the number of bins and limit the x-axis to show only the most central data, another picture starts to appear.
+At first glance, the residuals seem to have a near normal distribution. This would imply that the linear model offers a reasonable approximation of the data. However, if we instead plot the residuals per data point, we see another story:
 ![Residual Histogram 2](residuals2.png)
 This suggests that the residuals aren't normally distributed, but are instead following a cyclical, non-linear pattern and that a non-linear model would better fit the data. 
 
@@ -74,7 +74,7 @@ This depicts the total number of riders in the subway system when it is raining 
 
 ####3.2 One visualization can be more freeform. You should feel free to implement something that we discussed in class (e.g., scatter plots, line plots) or attempt to implement something more advanced if you'd like. 
 ![Daily no. of riders on the NYC Subway](viz2.png)
-This depicts the total number of riders on the NYC Subway per day, where 0 is Sunday and 6 is Saturday. As expected, there is a peak from Monday (1) to Friday (5) . The comparatively low number of riders on Mondays can be explained by the fact that there was a holiday Monday in the dataset and these are total figures across the month. There is no obvious explanation for the slight dip in ridership on Thursday and this requires further investigation. A possible explanation would be people going out after work on a Thursday evening and taking a taxi home instead of the subway. 
+This depicts the total number of riders on the NYC Subway per day where the week is shown from Sunday to Saturday. As expected, there is a peak from Monday to Friday. The comparatively low number of riders on Mondays can be explained by the fact that there was a holiday Monday in the dataset and these are total figures across the month. There is no obvious explanation for the slight dip in ridership on Thursday and this requires further investigation. A possible explanation would be people going out after work on a Thursday evening and taking a taxi home instead of the subway. 
 
 ##Section 4. Conclusion
 Please address the following questions in detail. Your answers should be 1-2 paragraphs long.
